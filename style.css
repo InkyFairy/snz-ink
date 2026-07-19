@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Caveat:wght@400;500&display=swap');
+
+:root {
+    --paper: #F6F2EC;
+    --ink: #1C1B1A;
+    --neon: #7EF7E7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    overflow: hidden;
+}
+
+.arrival {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome {
+    text-align: center;
+    z-index: 2;
+    animation: appear 3s ease forwards;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(4rem, 12vw, 8rem);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+p {
+    font-family: "Caveat", cursive;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-top: 30px;
+}
+
+.arrow {
+    display: block;
+    margin-top: 50px;
+    font-size: 2rem;
+    animation: float 2s infinite ease-in-out;
+}
+
+.light {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--neon);
+    filter: blur(120px);
+    opacity: 0.18;
+    animation: breathe 8s infinite alternate;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes breathe {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+}
