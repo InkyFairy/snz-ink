@@ -1,39 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SNZ.INK</title>
+
+    <meta name="description"
+        content="A quiet little corner for strange flowers, rule-breaking art, and wandering minds." />
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main class="arrival">
+    <!-- =====================================================
+         SNZ.INK
+         Season I — Arrival
 
-        <div class="light"></div>
+         If you're reading this...
 
-        <div class="alien-flower">
-    <div class="petal petal-one"></div>
-    <div class="petal petal-two"></div>
-    <div class="petal petal-three"></div>
-    <div class="core"></div>
-</div>
+         Welcome.
 
-        <section class="welcome">
-            <h1>SNZ.INK</h1>
+         Take your time.
 
-            <p>
-                Some places don't exist<br>
+         Nothing here is in a hurry.
+    ====================================================== -->
+
+    <div id="paper"></div>
+    <div id="light"></div>
+    <div id="grain"></div>
+
+    <main id="arrival">
+
+        <section class="hero">
+
+            <div class="sketch-mark sketch-one"></div>
+            <div class="sketch-mark sketch-two"></div>
+
+            <div id="flower-container">
+                <!-- JavaScript will grow flowers here -->
+            </div>
+
+            <p class="label">
+                page one
+            </p>
+
+            <h1>
+                <span>SNZ</span><span class="dot">.</span><span>INK</span>
+            </h1>
+
+            <p class="quote">
+                Some places don't exist
+                <br>
                 until someone arrives.
             </p>
 
-            <span class="arrow">↓</span>
+            <button id="beginButton">
+                Wander →
+            </button>
+
         </section>
+
+        <aside class="margin-note">
+
+            <div class="tape tape-top"></div>
+
+            <p>
+                Please don't feed the flowers.
+                <br>
+                They're becoming sentient.
+            </p>
+
+        </aside>
+
+        <footer>
+
+            <p id="changingThought">
+                ...
+            </p>
+
+        </footer>
 
     </main>
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
