@@ -1,178 +1,405 @@
+/* ==========================================================
+   SNZ.INK
+   Season I — Arrival
+   Foundation
+========================================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Shadows+Into+Light&display=swap');
 
 :root{
---paper:#efe6d8;
---paper2:#e6dccd;
---ink:#1f1b1b;
---pink:#d86ea8;
---cyan:#7ef7e7;
---green:#8a9a63;
+
+    --paper:#efe6d8;
+    --paper-dark:#e2d5c2;
+
+    --ink:#2a2424;
+
+    --pink:#d774b0;
+    --cyan:#87f7e7;
+    --green:#8ca56c;
+
+    --shadow:rgba(0,0,0,.18);
+
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-margin:0;
-overflow:hidden;
-font-family:"Shadows Into Light",cursive;
-color:var(--ink);
-background:
-radial-gradient(circle at 15% 20%,rgba(126,247,231,.14),transparent 28%),
-radial-gradient(circle at 80% 75%,rgba(216,110,168,.10),transparent 30%),
-linear-gradient(180deg,var(--paper),var(--paper2));
+
+    min-height:100vh;
+    overflow:hidden;
+
+    font-family:"Shadows Into Light",cursive;
+    color:var(--ink);
+
+    background:
+
+    radial-gradient(circle at 15% 15%,rgba(135,247,231,.15),transparent 28%),
+
+    radial-gradient(circle at 82% 70%,rgba(215,116,176,.10),transparent 34%),
+
+    linear-gradient(
+        180deg,
+        var(--paper),
+        var(--paper-dark)
+    );
+
 }
 
-#paper,#grain,#light{
-position:fixed;inset:0;pointer-events:none;
+/* ----------------------------------
+    Paper Layers
+---------------------------------- */
+
+#paper,
+#grain,
+#light{
+
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
 }
 
 #paper{
-background:
-repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 2px,transparent 2px 6px),
-repeating-linear-gradient(0deg,rgba(0,0,0,.015) 0 1px,transparent 1px 5px);
-opacity:.55;
+
+    opacity:.45;
+
+    background:
+
+    repeating-linear-gradient(
+
+        0deg,
+
+        rgba(255,255,255,.03),
+
+        rgba(255,255,255,.03) 2px,
+
+        transparent 2px,
+
+        transparent 8px
+
+    ),
+
+    repeating-linear-gradient(
+
+        90deg,
+
+        rgba(0,0,0,.02),
+
+        rgba(0,0,0,.02) 1px,
+
+        transparent 1px,
+
+        transparent 7px
+
+    );
+
 }
 
 #grain{
-opacity:.08;
-background-image:
-radial-gradient(#000 0.6px, transparent .7px);
-background-size:8px 8px;
-mix-blend-mode:multiply;
+
+    opacity:.08;
+
+    background-image:
+
+    radial-gradient(#000 .7px, transparent .8px);
+
+    background-size:8px 8px;
+
+    mix-blend-mode:multiply;
+
 }
 
 #light{
-background:
-radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(126,247,231,.16),transparent 220px);
-transition:background .08s linear;
+
+    background:
+
+    radial-gradient(
+
+        circle at 50% 40%,
+
+        rgba(135,247,231,.16),
+
+        transparent 340px
+
+    );
+
 }
 
+/* ----------------------------------
+    Main Layout
+---------------------------------- */
+
 #arrival{
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-position:relative;
-padding:2rem;
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    padding:60px;
+
 }
 
 .hero{
-position:relative;
-text-align:center;
-max-width:850px;
+
+    position:relative;
+
+    text-align:center;
+
+    max-width:900px;
+
 }
 
-.label{
-letter-spacing:.3em;
-text-transform:uppercase;
-font-size:.9rem;
-opacity:.55;
+.page-number{
+
+    text-transform:uppercase;
+
+    letter-spacing:.45em;
+
+    opacity:.45;
+
+    font-size:.9rem;
+
 }
 
 h1{
-font-family:"Special Elite",monospace;
-font-size:clamp(4rem,11vw,8rem);
-margin:.2rem 0;
-font-weight:400;
-transform:rotate(-1.5deg);
-text-shadow:2px 2px rgba(216,110,168,.18);
+
+    margin-top:10px;
+
+    font-family:"Special Elite",monospace;
+
+    font-weight:400;
+
+    font-size:clamp(4rem,11vw,8rem);
+
+    transform:rotate(-1.5deg);
+
+    text-shadow:
+
+    3px 3px rgba(215,116,176,.12);
+
 }
 
-.dot{color:var(--pink)}
+.dot{
+
+    color:var(--pink);
+
+}
 
 .quote{
-font-size:2rem;
-line-height:1.2;
-max-width:650px;
-margin:2rem auto;
+
+    margin:35px auto;
+
+    max-width:650px;
+
+    font-size:2rem;
+
+    line-height:1.25;
+
 }
 
+/* ----------------------------------
+    Wander Button
+---------------------------------- */
+
 #beginButton{
-background:transparent;
-border:2px solid var(--ink);
-padding:.9rem 2rem;
-font:inherit;
-font-size:1.2rem;
-cursor:pointer;
-border-radius:999px;
-transition:.35s;
+
+    margin-top:10px;
+
+    background:transparent;
+
+    border:2px solid var(--ink);
+
+    border-radius:999px;
+
+    padding:16px 36px;
+
+    cursor:pointer;
+
+    font:inherit;
+
+    font-size:1.2rem;
+
+    transition:.35s;
+
 }
 
 #beginButton:hover{
-background:var(--ink);
-color:#fff;
-transform:translateY(-3px);
-box-shadow:0 0 30px rgba(126,247,231,.3);
+
+    background:var(--ink);
+
+    color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+
+    0 0 30px rgba(135,247,231,.30);
+
 }
 
+/* ----------------------------------
+    Sticky Note
+---------------------------------- */
+
 .margin-note{
-position:absolute;
-right:4rem;
-top:3rem;
-width:220px;
-background:#f7ef9f;
-padding:1rem;
-transform:rotate(4deg);
-box-shadow:0 15px 30px rgba(0,0,0,.15);
+
+    position:absolute;
+
+    top:60px;
+    right:70px;
+
+    width:230px;
+
+    background:#f6ee9e;
+
+    padding:20px;
+
+    transform:rotate(4deg);
+
+    box-shadow:
+
+    0 18px 35px var(--shadow);
+
+}
+
+.margin-note p{
+
+    margin-bottom:12px;
+
+}
+
+.crossed{
+
+    text-decoration:line-through;
+
+    opacity:.65;
+
 }
 
 .tape{
-position:absolute;
-width:90px;
-height:20px;
-background:rgba(255,255,255,.35);
-left:50%;
-top:-10px;
-transform:translateX(-50%) rotate(-5deg);
-backdrop-filter:blur(2px);
+
+    position:absolute;
+
+    width:90px;
+    height:22px;
+
+    left:50%;
+    top:-12px;
+
+    transform:
+
+    translateX(-50%)
+    rotate(-5deg);
+
+    background:
+
+    rgba(255,255,255,.40);
+
+    border:
+
+    1px solid rgba(255,255,255,.35);
+
 }
+
+/* ----------------------------------
+    Coffee Ring
+---------------------------------- */
+
+.coffee-ring{
+
+    position:absolute;
+
+    width:140px;
+    height:140px;
+
+    left:-70px;
+    top:-50px;
+
+    border:
+
+    6px solid rgba(92,61,36,.08);
+
+    border-radius:50%;
+
+}
+
+/* ----------------------------------
+    Margin Thoughts
+---------------------------------- */
+
+.margin-thought{
+
+    position:absolute;
+
+    font-size:1rem;
+
+    opacity:.45;
+
+}
+
+.left{
+
+    left:40px;
+    bottom:140px;
+
+    transform:rotate(-6deg);
+
+}
+
+.right{
+
+    right:40px;
+    bottom:170px;
+
+    transform:rotate(5deg);
+
+}
+
+/* ----------------------------------
+    Footer
+---------------------------------- */
 
 footer{
-position:absolute;
-bottom:2rem;
-opacity:.7;
-font-size:1.1rem;
+
+    position:absolute;
+
+    bottom:35px;
+
+    opacity:.65;
+
 }
 
-.sketch-mark{
-position:absolute;
-border:2px solid rgba(31,27,27,.12);
-border-radius:50%;
-}
+/* ----------------------------------
+    Mobile
+---------------------------------- */
 
-.sketch-one{width:160px;height:60px;left:-70px;top:10px;transform:rotate(-8deg)}
-.sketch-two{width:120px;height:120px;right:-50px;bottom:30px}
+@media(max-width:900px){
 
-#flower-container::before{
-content:"âœ¿";
-position:absolute;
-left:-120px;
-top:-40px;
-font-size:5rem;
-color:var(--pink);
-filter:drop-shadow(0 0 12px rgba(126,247,231,.4));
-animation:float 6s ease-in-out infinite;
-}
+    .margin-note,
+    .margin-thought{
 
-#flower-container::after{
-content:"â‹";
-position:absolute;
-right:-140px;
-bottom:-10px;
-font-size:4rem;
-color:var(--green);
-animation:float2 8s ease-in-out infinite;
-}
+        display:none;
 
-@keyframes float{
-50%{transform:translateY(-15px) rotate(8deg)}
-}
-@keyframes float2{
-50%{transform:translateY(12px) rotate(-12deg)}
-}
+    }
 
-@media (max-width:900px){
-.margin-note{display:none}
-.quote{font-size:1.6rem}
+    .quote{
+
+        font-size:1.5rem;
+
+    }
+
 }
