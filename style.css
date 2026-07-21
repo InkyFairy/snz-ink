@@ -745,3 +745,259 @@ footer{
     transform:rotate(-1deg);
 
 }
+/* ===========================================================
+   SNZ.INK
+   "The page remembers."
+   Final atmospheric additions
+=========================================================== */
+
+/* The entire page gently inhales and exhales */
+
+body{
+
+    animation:
+        pageBreathing 18s ease-in-out infinite;
+
+}
+
+@keyframes pageBreathing{
+
+    0%,100%{
+
+        filter:saturate(100%) brightness(100%);
+
+    }
+
+    50%{
+
+        filter:saturate(103%) brightness(101.5%);
+
+    }
+
+}
+
+/* ------------------------------------------
+   Tiny stars that are actually paint
+------------------------------------------ */
+
+.paintDust{
+
+    position:fixed;
+
+    width:2px;
+    height:2px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.25;
+
+    pointer-events:none;
+
+    animation:
+        driftDust linear infinite;
+
+}
+
+@keyframes driftDust{
+
+    from{
+
+        transform:
+            translateY(0px);
+
+    }
+
+    to{
+
+        transform:
+            translateY(-80px);
+
+        opacity:0;
+
+    }
+
+}
+
+/* ------------------------------------------
+   Paper corners
+------------------------------------------ */
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:14px;
+
+    border:
+
+        1px solid rgba(40,40,40,.05);
+
+    pointer-events:none;
+
+    clip-path:
+
+        polygon(
+            0 8px,
+            8px 0,
+            calc(100% - 8px) 0,
+            100% 8px,
+            100% calc(100% - 8px),
+            calc(100% - 8px) 100%,
+            8px 100%,
+            0 calc(100% - 8px)
+        );
+
+}
+
+/* ------------------------------------------
+   A glowing flower
+------------------------------------------ */
+
+.alien-flower:nth-child(2){
+
+    animation:
+
+        sway 7s ease-in-out infinite,
+
+        bloom 5s ease-in-out infinite;
+
+}
+
+@keyframes bloom{
+
+    0%,100%{
+
+        filter:
+
+            drop-shadow(0 0 8px rgba(126,247,231,.35));
+
+    }
+
+    50%{
+
+        filter:
+
+            drop-shadow(0 0 28px rgba(126,247,231,.85));
+
+    }
+
+}
+
+/* ------------------------------------------
+   Scribble underline
+------------------------------------------ */
+
+.quote{
+
+    position:relative;
+
+}
+
+.quote::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    transform:
+        translateX(-50%)
+        rotate(-2deg);
+
+    bottom:-18px;
+
+    width:160px;
+
+    height:12px;
+
+    border-bottom:
+
+        2px solid rgba(0,0,0,.12);
+
+    border-radius:50%;
+
+}
+
+/* ------------------------------------------
+   Handwriting effect
+------------------------------------------ */
+
+.margin-note{
+
+    transition:
+        transform .6s ease;
+
+}
+
+.margin-note:hover{
+
+    transform:
+
+        rotate(2deg)
+        scale(1.03);
+
+}
+
+/* ------------------------------------------
+   Wandering button glow
+------------------------------------------ */
+
+#beginButton{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+#beginButton::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.4),
+
+        transparent
+
+    );
+
+}
+
+#beginButton:hover::before{
+
+    animation:
+        shimmer 1s;
+
+}
+
+@keyframes shimmer{
+
+    to{
+
+        left:130%;
+
+    }
+
+}
