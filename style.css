@@ -621,3 +621,127 @@ body::after{
     transform:rotate(-2deg);
 
 }
+/* ==========================================================
+   The page has been worked on.
+========================================================== */
+
+/* Soft paper shadow */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:18px;
+
+    border:1px solid rgba(0,0,0,.045);
+
+    box-shadow:
+
+        0 0 120px rgba(0,0,0,.08) inset,
+
+        0 0 80px rgba(255,255,255,.35) inset;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+/* ------------------------------------
+   Pencil circles
+------------------------------------ */
+
+.hero .circle-a,
+.hero .circle-b{
+
+    position:absolute;
+
+    border:2px solid rgba(40,40,40,.08);
+
+    border-radius:50%;
+
+}
+
+.circle-a{
+
+    width:190px;
+    height:70px;
+
+    top:-40px;
+    left:-120px;
+
+    transform:rotate(-11deg);
+
+}
+
+.circle-b{
+
+    width:150px;
+    height:150px;
+
+    right:-70px;
+    bottom:-30px;
+
+    transform:rotate(7deg);
+
+}
+
+/* ------------------------------------
+   Tiny paint splatters
+------------------------------------ */
+
+.paint{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    opacity:.35;
+
+    filter:blur(.4px);
+
+}
+
+.paint:nth-child(1){
+
+    background:#8ef4e5;
+
+    left:15%;
+    top:20%;
+
+}
+
+.paint:nth-child(2){
+
+    background:#da79b5;
+
+    right:18%;
+    top:12%;
+
+}
+
+.paint:nth-child(3){
+
+    background:#9fb17d;
+
+    left:22%;
+    bottom:14%;
+
+}
+
+/* ------------------------------------
+   Handwritten footer
+------------------------------------ */
+
+footer{
+
+    letter-spacing:.04em;
+
+    transform:rotate(-1deg);
+
+}
