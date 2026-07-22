@@ -1134,3 +1134,122 @@ body::after{
     right:18px;
 
 }
+/* -----------------------------------------
+   Sketchbook Gallery
+------------------------------------------*/
+
+.painting{
+
+    background:#f8f2e7;
+
+    padding:18px 18px 28px;
+
+    border-radius:4px;
+
+    box-shadow:
+
+        0 30px 60px rgba(0,0,0,.18);
+
+    transition:
+
+        transform .45s ease,
+
+        box-shadow .45s ease;
+
+}
+
+.painting:nth-child(odd){
+
+    transform:rotate(-2deg);
+
+}
+
+.painting:nth-child(even){
+
+    transform:rotate(1.8deg);
+
+}
+
+.painting:hover{
+
+    transform:
+
+        rotate(0deg)
+
+        translateY(-8px)
+
+        scale(1.02);
+
+}
+
+.masking-tape{
+
+    position:absolute;
+
+    width:90px;
+
+    height:24px;
+
+    background:
+
+        rgba(255,255,255,.45);
+
+    backdrop-filter:blur(2px);
+
+    top:-10px;
+
+}
+
+.masking-tape.left{
+
+    left:22px;
+
+    transform:rotate(-8deg);
+
+}
+
+.masking-tape.right{
+
+    right:22px;
+
+    transform:rotate(8deg);
+
+}
+
+.caption{
+
+    margin-top:18px;
+
+    text-align:left;
+
+}
+
+.chapter{
+
+    font-size:.75rem;
+
+    letter-spacing:.35em;
+
+    opacity:.45;
+
+}
+
+.caption h2{
+
+    margin:.5rem 0;
+
+    font-family:"Special Elite",monospace;
+
+    font-size:1.7rem;
+
+    font-weight:400;
+
+}
+
+.caption p{
+
+    opacity:.75;
+
+    line-height:1.6;
+
+}
